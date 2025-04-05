@@ -6,76 +6,84 @@
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
-      background-color: #111;
+      background-color: #000;
       color: #fff;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px;
     }
 
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 30px;
-      color: #ffd700;
+      font-size: 2.5em;
+      color: #ff3399;
+      margin-bottom: 40px;
     }
 
     .button {
-      display: inline-block;
-      padding: 15px 25px;
-      margin: 15px;
-      font-size: 1.1em;
-      color: #fff;
-      background-color: #e91e63;
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 15px 20px;
+      font-size: 1.2em;
+      background: #ff3399;
+      color: white;
       border: none;
       border-radius: 30px;
-      text-decoration: none;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s ease;
     }
 
     .button:hover {
-      background-color: #c2185b;
+      background: #e60073;
     }
 
-    dialog {
-      background: #222;
-      border: none;
-      border-radius: 15px;
+    /* Popup style */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .popup-content {
+      background-color: #1a1a1a;
+      margin: 20% auto;
       padding: 20px;
-      color: white;
-      text-align: center;
-      animation: fadeIn 0.3s ease-in-out;
+      border: 2px solid #ff3399;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 20px;
+      animation: fadeIn 0.4s ease-in-out;
     }
 
-    dialog::backdrop {
-      background: rgba(0,0,0,0.6);
+    .popup-content h2 {
+      margin-bottom: 10px;
+      color: #ff3399;
     }
 
-    @keyframes fadeIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .upi-box {
-      background: #333;
-      padding: 10px;
-      margin: 15px 0;
-      border-radius: 10px;
+    .popup-content p {
       font-size: 1.2em;
+      color: #fff;
     }
 
     .close-btn {
-      background: #e91e63;
-      border: none;
+      margin-top: 20px;
       padding: 10px 20px;
-      border-radius: 20px;
+      background: #ff3399;
       color: white;
+      border: none;
+      border-radius: 20px;
       cursor: pointer;
-      font-size: 1em;
     }
 
-    .close-btn:hover {
-      background: #c2185b;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -85,14 +93,26 @@
 
   <a class="button" href="https://t.me/+xTcFNqGBx4Q4N2I1" target="_blank">Telugu Collection</a>
   <a class="button" href="https://t.me/+I3RBfHAyhlBhN2I1" target="_blank">Premium</a>
-  <a class="button" href="upi://pay?pa=jhadekartik@oksbi&pn=Payment&cu=INR">Payment</a>
-  <button class="button" onclick="document.getElementById('popup').showModal()">Pay Here</button>
+  <button class="button" onclick="openPopup()">Pay Here</button>
 
-  <dialog id="popup">
-    <h2>Send Payment To:</h2>
-    <div class="upi-box">jhadekartik@oksbi</div>
-    <button class="close-btn" onclick="document.getElementById('popup').close()">Close</button>
-  </dialog>
+  <!-- Pop-up -->
+  <div id="paymentPopup" class="popup">
+    <div class="popup-content">
+      <h2>Send Payment To</h2>
+      <p>UPI ID: <strong>jhadekartik@oksbi</strong></p>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("paymentPopup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("paymentPopup").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
