@@ -6,46 +6,78 @@
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      background: #1e1e2f;
+      font-family: 'Arial', sans-serif;
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
     h1 {
-      font-size: 2.8em;
-      color: #ffd369;
+      font-size: 2.5em;
       margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #000;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
-      color: #e0e0e0;
+      color: #ffd369;
     }
 
     .button {
       display: inline-block;
-      background-color: #ff5e78;
-      color: white;
-      padding: 15px 35px;
+      padding: 15px 30px;
       margin: 15px;
-      border-radius: 50px;
-      font-size: 1.1em;
+      background: #ff5e78;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 30px;
       text-decoration: none;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
       cursor: pointer;
+      transition: 0.3s;
     }
 
     .button:hover {
-      background-color: #e84560;
-      transform: scale(1.05);
+      background: #e84560;
     }
 
-    /* Strong Popup styles */
+    /* Popup box styles */
+    .popup-box {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2c2c54;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      z-index: 1000;
+    }
+
+    .popup-box h2 {
+      color: #ffd369;
+      margin-bottom: 15px;
+    }
+
+    .popup-box p {
+      font-size: 1.2em;
+      background: #444;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .popup-box button {
+      margin-top: 20px;
+      background: #ff5e78;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background: #e84560;
+    }
+
+    /* Dark overlay */
     .overlay {
       display: none;
       position: fixed;
@@ -53,104 +85,36 @@
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.7);
       z-index: 999;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .popup {
-      background-color: #2c2c54;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-      animation: popIn 0.5s ease-out forwards;
-      max-width: 90%;
-      text-align: center;
-    }
-
-    @keyframes popIn {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .popup h2 {
-      margin-bottom: 15px;
-      color: #ffd369;
-    }
-
-    .popup p {
-      font-size: 1.2em;
-      background: #444;
-      padding: 10px;
-      border-radius: 10px;
-      word-break: break-word;
-      color: #fff;
-    }
-
-    .close-btn {
-      margin-top: 20px;
-      padding: 10px 25px;
-      background-color: #ff5e78;
-      border: none;
-      border-radius: 50px;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .close-btn:hover {
-      background-color: #e84560;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #bbb;
     }
   </style>
 </head>
 <body>
 
   <h1>HEY BEDA EDI 18+ ADDA</h1>
-  <p>Welcome to your favorite entertainment hub. Choose your collection below 👇</p>
 
-  <!-- Main Buttons -->
+  <!-- Buttons -->
   <a class="button" href="https://t.me/+xTcFNqGBx4Q4N2I1" target="_blank">Telugu Collection</a>
   <a class="button" href="https://t.me/+I3RBfHAyhlBhN2I1" target="_blank">Premium</a>
-  <a class="button" href="upi://pay?pa=jhadekartik@oksbi&pn=HEY%20BEDA%20EDI%2018%2B%20ADDA&cu=INR">Payment</a>
+  <a class="button" href="upi://pay?pa=jhadekartik@oksbi&pn=Payment&cu=INR">Payment</a>
+  <button class="button" onclick="openPopup()">Pay Here</button>
 
-  <!-- Pop-up Trigger -->
-  <div>
-    <button class="button" onclick="showPopup()">Pay Here</button>
+  <!-- Overlay and Popup -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+  <div class="popup-box" id="popup">
+    <h2>Send Payment To:</h2>
+    <p><strong>UPI ID:</strong><br> jhadekartik@oksbi</p>
+    <button onclick="closePopup()">Close</button>
   </div>
-
-  <!-- Strong Popup -->
-  <div id="overlay" class="overlay" onclick="hidePopup(event)">
-    <div class="popup">
-      <h2>Send Payment To</h2>
-      <p><strong>UPI ID:</strong><br> jhadekartik@oksbi</p>
-      <button class="close-btn" onclick="hidePopup(event)">Close</button>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 HEY BEDA EDI 18+ ADDA. All rights reserved.
-  </footer>
 
   <script>
-    function showPopup() {
-      document.getElementById('overlay').style.display = 'flex';
+    function openPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
     }
 
-    function hidePopup(event) {
-      if (event.target.id === 'overlay' || event.target.className === 'close-btn') {
-        document.getElementById('overlay').style.display = 'none';
-      }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
     }
   </script>
 
