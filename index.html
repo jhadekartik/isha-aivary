@@ -2,68 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: white;
+      background-color: #fffaf5;
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px;
     }
-
     h1 {
-      font-size: 2.8em;
-      color: #ffd369;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px #000;
+      color: #b8955d;
+      font-size: 3em;
     }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
-      color: #e0e0e0;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #ff5e78;
+    .btn {
+      background-color: #b8955d;
       color: white;
-      padding: 15px 35px;
-      margin: 15px;
-      border-radius: 50px;
-      font-size: 1.1em;
-      text-decoration: none;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.2em;
     }
-
-    .button:hover {
-      background-color: #e84560;
-      transform: scale(1.05);
+    .btn:hover {
+      background-color: #a8844d;
     }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #bbb;
+    #qrBox {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    #qrBox img {
+      width: 250px;
+      height: auto;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
-
   <h1>HEY BEDA EDI 18+ ADDA</h1>
-  <p>Welcome to your favorite entertainment hub. Choose your collection below 👇</p>
+  <p>Welcome to the official Telugu collection & premium page.</p>
 
-  <!-- Three Buttons -->
-  <a class="button" href="https://t.me/+xTcFNqGBx4Q4N2I1" target="_blank">Telugu Collection</a>
-  <a class="button" href="https://t.me/+I3RBfHAyhlBhN2I1" target="_blank">Premium</a>
-  <a class="button" href="upi://pay?pa=jhadekartik@oksbi&pn=HEY%20BEDA%20EDI%2018%2B%20ADDA&cu=INR">Payment</a>
+  <button class="btn" onclick="window.location.href='https://t.me/yourlink1'">Telugu Collection</button>
+  <button class="btn" onclick="window.location.href='https://t.me/yourlink2'">Premium</button>
+  <button class="btn" onclick="showQR()">Pay Here</button>
 
-  <footer>
-    © 2025 HEY BEDA EDI 18+ ADDA. All rights reserved.
-  </footer>
+  <div id="qrBox">
+    <h2>Scan & Pay UPI</h2>
+    <img src="6307522098721048117.jpg" alt="UPI QR Code" />
+    <p>UPI ID: <strong>jhadekartik@oksbi</strong></p>
+  </div>
 
+  <script>
+    function showQR() {
+      document.getElementById("qrBox").style.display = "block";
+    }
+  </script>
 </body>
 </html>
