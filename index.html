@@ -2,84 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #fff;
+      background: linear-gradient(to right, #1a0000, #330000);
+      color: white;
       display: flex;
-      flex-direction: row;
       height: 100vh;
     }
 
-    .image-section {
+    .left {
       flex: 1;
-      background: url('model.jpg') no-repeat center center;
-      background-size: cover;
-    }
-
-    .content {
-      flex: 1;
-      background-color: #111;
+      padding: 50px 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      padding: 40px;
+      align-items: flex-start;
     }
 
-    h1 {
+    .left h1 {
+      font-size: 40px;
       color: #ff0033;
-      font-size: 36px;
       margin-bottom: 40px;
-      text-align: center;
     }
 
     .button {
-      background: #ff0033;
+      background-color: #ff0033;
       color: white;
-      border: none;
       padding: 15px 30px;
-      margin: 10px;
-      font-size: 18px;
+      border: none;
       border-radius: 10px;
+      margin: 10px 0;
+      font-size: 18px;
       cursor: pointer;
       transition: background 0.3s ease;
-      width: 250px;
     }
 
     .button:hover {
-      background: #e60029;
+      background-color: #cc0022;
     }
 
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-      .image-section {
-        height: 40vh;
-        width: 100%;
-      }
-
-      .content {
-        height: 60vh;
-      }
+    .right img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <div class="image-section"></div>
 
-  <div class="content">
+  <div class="left">
     <h1>HEY BEDA EDI 18+ ADDA</h1>
 
     <button class="button" onclick="window.location.href='https://t.me/+xTcFNqGBx4Q4N2I1'">Telugu Collection</button>
     <button class="button" onclick="window.location.href='https://t.me/+I3RBfHAyhlBhN2I1'">Premium</button>
     <button class="button" onclick="window.location.href='payment.html'">Pay Here</button>
   </div>
+
+  <div class="right">
+    <img src="model.jpg" alt="Model Image" />
+  </div>
+
 </body>
 </html>
