@@ -6,84 +6,85 @@
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      font-family: 'Arial', sans-serif;
+      color: white;
       text-align: center;
-      padding: 30px;
+      padding: 50px 20px;
     }
 
     h1 {
       font-size: 2.5em;
-      color: #ff3399;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      color: #ffd369;
     }
 
     .button {
-      display: block;
-      width: 80%;
-      max-width: 300px;
-      margin: 20px auto;
-      padding: 15px 20px;
-      font-size: 1.2em;
-      background: #ff3399;
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 15px;
+      background: #ff5e78;
       color: white;
-      border: none;
+      font-size: 1.2em;
       border-radius: 30px;
+      text-decoration: none;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
     .button:hover {
-      background: #e60073;
+      background: #e84560;
     }
 
-    /* Popup style */
-    .popup {
+    /* Popup box styles */
+    .popup-box {
       display: none;
       position: fixed;
-      z-index: 10;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2c2c54;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      z-index: 1000;
     }
 
-    .popup-content {
-      background-color: #1a1a1a;
-      margin: 20% auto;
-      padding: 20px;
-      border: 2px solid #ff3399;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 20px;
-      animation: fadeIn 0.4s ease-in-out;
+    .popup-box h2 {
+      color: #ffd369;
+      margin-bottom: 15px;
     }
 
-    .popup-content h2 {
-      margin-bottom: 10px;
-      color: #ff3399;
-    }
-
-    .popup-content p {
+    .popup-box p {
       font-size: 1.2em;
+      background: #444;
+      padding: 10px;
+      border-radius: 10px;
       color: #fff;
     }
 
-    .close-btn {
+    .popup-box button {
       margin-top: 20px;
-      padding: 10px 20px;
-      background: #ff3399;
-      color: white;
+      background: #ff5e78;
       border: none;
+      padding: 10px 25px;
       border-radius: 20px;
+      color: white;
       cursor: pointer;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+    .popup-box button:hover {
+      background: #e84560;
+    }
+
+    /* Dark overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
     }
   </style>
 </head>
@@ -91,26 +92,29 @@
 
   <h1>HEY BEDA EDI 18+ ADDA</h1>
 
+  <!-- Buttons -->
   <a class="button" href="https://t.me/+xTcFNqGBx4Q4N2I1" target="_blank">Telugu Collection</a>
   <a class="button" href="https://t.me/+I3RBfHAyhlBhN2I1" target="_blank">Premium</a>
+  <a class="button" href="upi://pay?pa=jhadekartik@oksbi&pn=Payment&cu=INR">Payment</a>
   <button class="button" onclick="openPopup()">Pay Here</button>
 
-  <!-- Pop-up -->
-  <div id="paymentPopup" class="popup">
-    <div class="popup-content">
-      <h2>Send Payment To</h2>
-      <p>UPI ID: <strong>jhadekartik@oksbi</strong></p>
-      <button class="close-btn" onclick="closePopup()">Close</button>
-    </div>
+  <!-- Overlay and Popup -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+  <div class="popup-box" id="popup">
+    <h2>Send Payment To:</h2>
+    <p><strong>UPI ID:</strong><br> jhadekartik@oksbi</p>
+    <button onclick="closePopup()">Close</button>
   </div>
 
   <script>
     function openPopup() {
-      document.getElementById("paymentPopup").style.display = "block";
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
     }
 
     function closePopup() {
-      document.getElementById("paymentPopup").style.display = "none";
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
     }
   </script>
 
