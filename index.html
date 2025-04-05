@@ -2,68 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HEY BEDA EDI 18+ ADDA</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #8B0000, #000000);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      text-align: center;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
     }
 
-    header {
-      padding: 40px 20px 20px;
+    .image-section {
+      flex: 1;
+      background: url('model.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .content {
+      flex: 1;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
     }
 
     h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px red;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      color: #ff0033;
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-align: center;
     }
 
     .button {
-      display: block;
-      width: 80%;
-      max-width: 300px;
-      margin: 20px auto;
-      padding: 15px;
-      font-size: 1.2em;
-      background-color: #ff1a1a;
+      background: #ff0033;
       color: white;
       border: none;
-      border-radius: 8px;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #ff1a1a;
+      transition: background 0.3s ease;
+      width: 250px;
     }
 
     .button:hover {
-      background-color: #e60000;
-      box-shadow: 0 0 20px #ff1a1a;
+      background: #e60029;
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #ccc;
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .image-section {
+        height: 40vh;
+        width: 100%;
+      }
+
+      .content {
+        height: 60vh;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="image-section"></div>
+
+  <div class="content">
     <h1>HEY BEDA EDI 18+ ADDA</h1>
-  </header>
 
-  <button class="button" onclick="window.location.href='https://t.me/+xTcFNqGBx4Q4N2I1'">TELUGU COLLECTION</button>
-  <button class="button" onclick="window.location.href='https://t.me/+I3RBfHAyhlBhN2I1'">PREMIUM</button>
-  <button class="button" onclick="window.location.href='payment.html'">PAY HERE</button>
-
-  <footer>
-    &copy; 2025 Hey Beda Edi | All Rights Reserved
-  </footer>
+    <button class="button" onclick="window.location.href='https://t.me/+xTcFNqGBx4Q4N2I1'">Telugu Collection</button>
+    <button class="button" onclick="window.location.href='https://t.me/+I3RBfHAyhlBhN2I1'">Premium</button>
+    <button class="button" onclick="window.location.href='payment.html'">Pay Here</button>
+  </div>
 </body>
 </html>
